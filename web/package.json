@@ -13,9 +13,13 @@
     ]
   },
   "dependencies": {
+    "@chakra-ui/react": "^2.5.0",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
     "@redwoodjs/forms": "4.0.1",
     "@redwoodjs/router": "4.0.1",
     "@redwoodjs/web": "4.0.1",
+    "framer-motion": "^9.0.2",
     "prop-types": "15.8.1",
     "react": "17.0.2",
     "react-dom": "17.0.2"
