@@ -4,5 +4,8 @@ module.exports = {
    *
    * @see {@link https://storybook.js.org/addons/tag/essentials}
    */
-  addons: ['@storybook/addon-essentials'],
+  addons: ['@storybook/addon-essentials', '@chakra-ui/storybook-addon'],
+  features: {
+    emotionAlias: false,
+  },
 }
