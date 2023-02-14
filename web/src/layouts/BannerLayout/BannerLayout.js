@@ -1,8 +1,10 @@
+import Navbar from 'src/components/Navbar'
+
 const BannerLayout = ({ children }) => {
   return (
   <>
     <header>
-      <h1>Levl</h1>
+      <Navbar />
     </header>
     <main>{children}</main>
   </>
