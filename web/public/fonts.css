@@ -1,0 +1,38 @@
+/* Greed */
+@font-face {
+  font-family: 'GreedHeavy';
+  src: url('./fonts/GreedHeavy.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+}
+
+/* Inter */
+@font-face {
+  font-family: 'Inter';
+  src: url('./fonts/Inter-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('./fonts/Inter-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('./fonts/Inter-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('./fonts/Inter-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+
