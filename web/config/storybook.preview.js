@@ -1,6 +1,6 @@
 // .storybook/preview.js
 
-const theme = require('./chakra.config.js')
+import theme from "./chakra.config";
 
 export const parameters = {
   chakra: {
