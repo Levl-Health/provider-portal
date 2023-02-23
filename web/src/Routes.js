@@ -7,7 +7,7 @@
 // 'src/pages/HomePage/HomePage.js'         -> HomePage
 // 'src/pages/Admin/BooksPage/BooksPage.js' -> AdminBooksPage
 import { Router, Route, Set } from '@redwoodjs/router'
-import BannerLayout from './layouts/BannerLayout/BannerLayout'
+import BannerLayout from 'src/layouts/BannerLayout/BannerLayout'
 
 const Routes = () => {
   return (
