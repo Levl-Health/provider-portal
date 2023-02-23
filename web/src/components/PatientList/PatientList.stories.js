@@ -9,7 +9,7 @@
 //
 // See https://storybook.js.org/docs/react/writing-stories/args.
 
-import PatientList from './PatientList'
+import PatientList from 'src/components/PatientList/PatientList'
 
 export const generated = () => {
   return <PatientList />

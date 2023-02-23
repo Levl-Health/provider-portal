@@ -1,10 +1,10 @@
-import PatientCard from "../PatientCard/PatientCard"
-import { Box, Flex, Text, Spacer } from "@chakra-ui/react"
-import { Icon } from "@chakra-ui/react";
-import { InfoOutlineIcon } from "@chakra-ui/icons";
+import { InfoOutlineIcon } from '@chakra-ui/icons'
+import { Box, Flex, Text } from '@chakra-ui/react'
+import { Icon } from '@chakra-ui/react'
+
+import PatientCard from '../PatientCard/PatientCard'
 
 const PatientList = () => {
-
   // Temporary Sample Data
   const samplePatients = [
     {
@@ -15,7 +15,7 @@ const PatientList = () => {
       riskStatus: 'High-risk for 3 weeks',
       mood: ['Restless', 'Frustated', 'Sad'],
       adherence: 60,
-      checkedIn: '2022-12-05'
+      checkedIn: '2022-12-05',
     },
     {
       avatar: 'images/avatar_4.png',
@@ -25,7 +25,7 @@ const PatientList = () => {
       riskStatus: 'Very low-risk',
       mood: ['Happy', 'Relaxed', 'Grateful'],
       adherence: 96,
-      checkedIn: '2022-12-22'
+      checkedIn: '2022-12-22',
     },
     {
       avatar: 'images/avatar_2.png',
@@ -35,7 +35,7 @@ const PatientList = () => {
       riskStatus: 'Very low-risk',
       mood: ['Meh', 'average'],
       adherence: 80,
-      checkedIn: '2022-12-20'
+      checkedIn: '2022-12-20',
     },
     {
       avatar: 'images/avatar_1.png',
@@ -45,13 +45,12 @@ const PatientList = () => {
       riskStatus: 'Low-risk',
       mood: ['Happy', 'Relaxed', 'Grateful'],
       adherence: 80,
-      checkedIn: '2022-12-20'
+      checkedIn: '2022-12-20',
     },
   ]
 
   return (
     <Box m="2em">
-
       <Flex
         bg="brand.blue.100"
         color="background.300"
@@ -67,7 +66,13 @@ const PatientList = () => {
         <Box flex="1">
           <Flex alignItems="center">
             <Text>Symptoms</Text>
-            <Icon as={InfoOutlineIcon} color="background.300" ml=".25em" w="1em" h="1em"/>
+            <Icon
+              as={InfoOutlineIcon}
+              color="background.300"
+              ml=".25em"
+              w="1em"
+              h="1em"
+            />
           </Flex>
         </Box>
         <Box flex="1">Mood Reported</Box>
@@ -80,7 +85,6 @@ const PatientList = () => {
       <PatientCard {...samplePatients[1]} />
       <PatientCard {...samplePatients[2]} />
       <PatientCard {...samplePatients[3]} />
-
     </Box>
   )
 }

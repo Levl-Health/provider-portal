@@ -9,7 +9,7 @@
 //
 // See https://storybook.js.org/docs/react/writing-stories/args.
 
-import PatientCard from './PatientCard'
+import PatientCard from 'src/components/PatientCard/PatientCard'
 
 export const generated = (args) => {
   return <PatientCard {...args} />
@@ -26,8 +26,6 @@ export default {
     riskStatus: 'Very low-risk',
     mood: ['Anxious', 'Average'],
     adherence: 80,
-    checkedIn: '2022-12-20'
-  }
+    checkedIn: '2022-12-20',
+  },
 }
-
-
