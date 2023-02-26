@@ -1,18 +1,67 @@
-datasource db {
-  provider = "sqlite"
-  url      = env("DATABASE_URL")
-}
-
 generator client {
   provider      = "prisma-client-js"
-  binaryTargets = "native"
+  binaryTargets = ["native"]
 }
 
-// Define your own datamodels here and run `yarn redwood prisma migrate dev`
-// to create migrations for them and apply to your dev DB.
-// TODO: Please remove the following example:
-model UserExample {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  name  String?
+datasource db {
+  provider          = "sqlserver"
+  url               = env("DATABASE_URL")
+  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
+}
+
+model dailymetrics {
+  id           Int           @id(map: "PK__dailymet__3213E83FD6D209E3") @default(autoincrement())
+  patientId    Int
+  adhd         Int?
+  anxiety      Int?
+  depression   Int?
+  createdAt    DateTime
+  mood         String?       @db.VarChar(45)
+  dosages      Int?
+  dosagesTaken Int?
+  checkedIn    Int?          @db.SmallInt
+  moodLevel    Int?
+  patient      patient       @relation(fields: [patientId], references: [id], onUpdate: NoAction, map: "FK_dailyMetrics_to_Patient")
+  sideEffects  sideEffects[]
+}
+
+model patient {
+  id           Int            @id(map: "PK__patient__3213E83F5E8C1997") @default(autoincrement())
+  providerId   Int
+  active       Int            @db.SmallInt
+  overdue      Int            @db.SmallInt
+  riskStatus   Int?
+  firstName    String         @db.VarChar(45)
+  middleName   String?        @db.VarChar(45)
+  lastName     String         @db.VarChar(45)
+  avatar       Bytes?
+  phoneNumber  String         @db.VarChar(15)
+  dailymetrics dailymetrics[]
+  provider     provider       @relation(fields: [providerId], references: [id], onUpdate: NoAction, map: "FK_patient_to_Provider")
+  sideEffects  sideEffects[]
+}
+
+model provider {
+  id           Int       @id(map: "PK__provider__3213E83FB2C6E28C") @default(autoincrement())
+  practiceName String    @db.VarChar(45)
+  patient      patient[]
+  user         user[]
+}
+
+model sideEffects {
+  id               Int          @id(map: "PK__tmp_ms_x__3213E83F6CCD1F52") @default(autoincrement())
+  patientMetricsId Int
+  patientId        Int
+  title            String       @db.VarChar(45)
+  dailymetrics     dailymetrics @relation(fields: [patientMetricsId], references: [id], onUpdate: NoAction, map: "FK_sideEffects_to_dailyMetrics")
+  patient          patient      @relation(fields: [patientId], references: [id], onUpdate: NoAction, map: "FK_sideEffects_to_Patient")
+}
+
+model user {
+  id         Int      @id(map: "PK__user__3213E83F63636C5C") @default(autoincrement())
+  providerId Int
+  firstName  String   @db.VarChar(45)
+  lastName   String   @db.VarChar(45)
+  email      String   @db.VarChar(45)
+  provider   provider @relation(fields: [providerId], references: [id], onUpdate: NoAction, map: "FK__user__providerId__73852659")
 }
