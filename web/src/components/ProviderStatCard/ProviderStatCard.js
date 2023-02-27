@@ -2,31 +2,59 @@ import {
   Button,
   ButtonGroup,
   Box,
-  Flex,
   Spacer,
-  Text
+  Text,
+  Container,
+  Stack,
+  Img,
 } from '@chakra-ui/react'
+
 
 
 const ProviderStatCard = () => {
   return (
     <div>
-      <Flex bg="#4DB3F4">
-      <Box height="198px" width="1728px">
-        <Button left="47px" top={30} height="138px" width={317} bg="white">
-          Hello, Farah
-        </Button>
-      </Box>
-      <Spacer />
-      <Box>
-        <ButtonGroup spacing={30}>
-          <Button top={30} right={54} bg="white" width="138px" height="138px"> Active patients</Button>
-          <Button top={30} right={54} bg="white" width="138px" height="138px"> Overdue patients</Button>
-          <Button top={30} right={54} bg="white" width="138px" height="138px"> High-risk patients</Button>
-        </ButtonGroup>
-      </Box>
-      </Flex>
-
+      <Container bg="brand.blue.100" maxW="1728px" h="198px" paddingLeft="47px" paddingRight="54px" paddingY="30px">
+        <Stack direction="row">
+          <Box>
+            <Button height="138px" width="317px" bg="background.300">
+            <Text fontSize="42" lineHeight="48px" fontFamily="heading">Hello, Farah</Text>
+            </Button>
+          </Box>
+          <Spacer />
+          <Box>
+            <ButtonGroup spacing={30}>
+              <Button bg="background.300" width="138px" height="138px">
+                <Stack direction="column">
+                  <Box>
+                    <Img src="/images/mood_1.svg" alt="Image 2" w={35} h={35} />
+                  </Box>
+                  <Text fontSize="42" lineHeight="48px" fontFamily="heading"> # </Text>
+                  <Text>Active patients</Text>
+                </Stack>
+              </Button>
+              <Button bg="background.300" width="138px" height="138px">
+                <Stack direction="column">
+                  <Box>
+                    <Img src="/images/mood_2.svg" alt="Image 3" w={35} h={35} />
+                  </Box>
+                  <Text fontSize="42" lineHeight="48px" fontFamily="heading"> # </Text>
+                  <Text>Overdue patients</Text>
+                </Stack>
+              </Button>
+              <Button bg="background.300" width="138px" height="138px">
+                <Stack direction="column">
+                  <Box>
+                    <Img src="/images/mood_3.svg" alt="Image 4" w={35} h={35} />
+                  </Box>
+                  <Text fontSize="42" lineHeight="48px" fontFamily="heading"> # </Text>
+                  <Text>High-risk patients</Text>
+                </Stack>
+              </Button>
+            </ButtonGroup>
+          </Box>
+        </Stack>
+      </Container>
     </div>
   )
 }
