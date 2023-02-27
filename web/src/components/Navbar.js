@@ -1,3 +1,4 @@
+import { ChevronDownIcon } from '@chakra-ui/icons'
 import {
   Button,
   ButtonGroup,
@@ -7,16 +8,15 @@ import {
   MenuItem,
   Box,
   Flex,
-  Spacer
+  Spacer,
 } from '@chakra-ui/react'
-import { ChevronDownIcon } from '@chakra-ui/icons';
 
 const Navbar = () => {
   return (
-  <>
+    <>
       <Flex alignItems="center">
         <Box>
-          <img src='images/logo.png' alt='Logo' />
+          <img src="images/logo.png" alt="Logo" />
         </Box>
         <Spacer />
         <Box>
@@ -28,7 +28,11 @@ const Navbar = () => {
         </Box>
         <Box>
           <Menu>
-            <MenuButton as={Button} variant="ghost" rightIcon={<ChevronDownIcon />}>
+            <MenuButton
+              as={Button}
+              variant="ghost"
+              rightIcon={<ChevronDownIcon />}
+            >
               Menu Item
             </MenuButton>
             <MenuList>
@@ -37,9 +41,9 @@ const Navbar = () => {
               <MenuItem>Option 3</MenuItem>
             </MenuList>
           </Menu>
-      </Box>
-    </Flex>
-  </>
+        </Box>
+      </Flex>
+    </>
   )
 }
 
