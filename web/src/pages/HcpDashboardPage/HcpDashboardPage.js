@@ -1,6 +1,6 @@
-import { Link, routes } from '@redwoodjs/router'
 import { MetaTags } from '@redwoodjs/web'
-import PatientList from 'src/components/PatientList';
+
+import PatientList from 'src/components/PatientList'
 
 const HcpDashboardPage = () => {
   return (
@@ -8,7 +8,7 @@ const HcpDashboardPage = () => {
       <MetaTags title="HcpDashboard" description="HcpDashboard page" />
 
       <PatientList />
-        {/* <Link to={routes.hcpDashboard()}>HcpDashboard</Link>` */}
+      {/* <Link to={routes.hcpDashboard()}>HcpDashboard</Link>` */}
     </>
   )
 }
