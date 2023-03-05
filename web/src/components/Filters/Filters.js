@@ -39,7 +39,6 @@ const Filters = () => {
             <Select bg="background.300" width="237px" height="56px" placeholder='Adherance'>
               <option value='option1'>Hight to Low</option>
               <option value='option2'>Low to High</option>
-              <option value='option3'>Option 3</option>
             </Select>
             <Select bg="background.300" width="156px" height="56px" placeholder='Sort By'>
               <option value='option1'>Option 1</option>
