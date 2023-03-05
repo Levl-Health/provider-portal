@@ -1,4 +1,4 @@
-import ProviderDashboardPage from './ProviderDashboardPage'
+import ProviderDashboardPage from 'src/pages/ProviderDashboardPage/ProviderDashboardPage'
 
 export const generated = () => {
   return <ProviderDashboardPage />

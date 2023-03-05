@@ -1,6 +1,6 @@
 import { render } from '@redwoodjs/testing/web'
 
-import BannerLayout from './BannerLayout'
+import BannerLayout from 'src/layouts/BannerLayout/BannerLayout'
 
 //   Improve this test with help from the Redwood Testing Doc:
 //   https://redwoodjs.com/docs/testing#testing-pages-layouts

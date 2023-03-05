@@ -1,4 +1,4 @@
-import HcpDashboardPage from './HcpDashboardPage'
+import HcpDashboardPage from 'src/pages/HcpDashboardPage/HcpDashboardPage'
 
 export const generated = () => {
   return <HcpDashboardPage />
