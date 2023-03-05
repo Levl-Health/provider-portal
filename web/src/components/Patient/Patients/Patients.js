@@ -67,7 +67,7 @@ const PatientsList = ({ patients }) => {
               <td>{truncate(patient.phoneNumber)}</td>
               <td>
                 <nav className="rw-table-actions">
-                  <Link
+                  {/*<Link
                     to={routes.patient({ id: patient.id })}
                     title={'Show patient ' + patient.id + ' detail'}
                     className="rw-button rw-button-small"
@@ -81,6 +81,7 @@ const PatientsList = ({ patients }) => {
                   >
                     Edit
                   </Link>
+                  */}
                   <button
                     type="button"
                     title={'Delete patient ' + patient.id}

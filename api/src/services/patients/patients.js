@@ -1,7 +1,22 @@
 import { db } from 'src/lib/db'
 
-export const patients = ({ providerId }) => {
-  return db.patient.findMany({ where: { providerId } })
+export const patients = ({ providerId, filters }) => {
+  let { risk, symptoms, mood, adherence } = filters
+  let andWhere = {}
+
+  if (risk) {
+    if (risk === 'high') {
+      andWhere.riskStatus = { gt: 50 }
+    }
+  }
+  /*if (symptoms) {
+  }
+  if (mood) {
+  }*/
+
+  return db.patient.findMany({
+    where: { providerId, AND: andWhere },
+  })
 }
 
 export const patient = ({ id }) => {
@@ -15,14 +30,12 @@ export const createPatient = ({ input }) => {
     data: input,
   })
 }
-
 export const updatePatient = ({ id, input }) => {
   return db.patient.update({
     data: input,
     where: { id },
   })
 }
-
 export const deletePatient = ({ id }) => {
   return db.patient.delete({
     where: { id },

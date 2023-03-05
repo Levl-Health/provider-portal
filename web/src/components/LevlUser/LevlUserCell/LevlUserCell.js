@@ -1,4 +1,3 @@
-import LevlUser from 'src/components/LevlUser/LevlUser'
 import PatientsCell from 'src/components/Patient/PatientsCell'
 
 export const QUERY = gql`
@@ -9,6 +8,32 @@ export const QUERY = gql`
       firstName
       lastName
       email
+      Provider {
+        Patient {
+          id
+          providerId
+          active
+          overdue
+          riskStatus
+          firstName
+          middleName
+          lastName
+          phoneNumber
+          DailyMetric {
+            id
+            patientId
+            adhd
+            anxiety
+            depression
+            createdAt
+            mood
+            dosages
+            dosagesTaken
+            checkedIn
+            moodLevel
+          }
+        }
+      }
     }
   }
 `
@@ -21,6 +46,21 @@ export const Failure = ({ error }) => (
   <div className="rw-cell-error">{error?.message}</div>
 )
 
+let filters = {
+  risk: '',
+  symptoms: '',
+  mood: '',
+  adherence: '',
+}
+
 export const Success = ({ levlUser }) => {
-  return <PatientsCell providerId={levlUser.providerId}></PatientsCell>
+  console.log(levlUser)
+  return <></>
+  /*
+  return (
+    <PatientsCell
+      providerId={levlUser.providerId}
+      filters={filters}
+    ></PatientsCell>
+  )*/
 }

@@ -16,7 +16,7 @@ export const schema = gql`
   }
 
   type Query {
-    patients(providerId: Int!): [Patient!]! @requireAuth
+    patients(providerId: Int!, filters: JSON): [Patient!]! @requireAuth
     patient(id: Int!): Patient @requireAuth
   }
 

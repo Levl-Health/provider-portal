@@ -17,7 +17,8 @@ const Routes = () => {
   return (
     <Router useAuth={useAuth}>
       <Route path="/landing" page={LandingPage} name="landing" />
-      <Set wrap={ScaffoldLayout} title="SideEffects" titleTo="sideEffects" buttonLabel="New SideEffect" buttonTo="newSideEffect">
+
+      {/*<Set wrap={ScaffoldLayout} title="SideEffects" titleTo="sideEffects" buttonLabel="New SideEffect" buttonTo="newSideEffect">
         <Route path="/side-effects/new" page={SideEffectNewSideEffectPage} name="newSideEffect" />
         <Route path="/side-effects/{id:Int}/edit" page={SideEffectEditSideEffectPage} name="editSideEffect" />
         <Route path="/side-effects/{id:Int}" page={SideEffectSideEffectPage} name="sideEffect" />
@@ -37,7 +38,6 @@ const Routes = () => {
       </Set>
       <Set wrap={ScaffoldLayout} title="LevlUsers" titleTo="levlUsers" buttonLabel="New LevlUser" buttonTo="newLevlUser">
         <Route path="/levl-users/new" page={LevlUserNewLevlUserPage} name="newLevlUser" />
-
         <Route path="/levl-users/{id:Int}" page={LevlUserLevlUserPage} name="levlUser" />
         <Route path="/levl-users" page={LevlUserLevlUsersPage} name="levlUsers" />
       </Set>
@@ -47,10 +47,12 @@ const Routes = () => {
         <Route path="/providers/{id:Int}" page={ProviderProviderPage} name="provider" />
         <Route path="/providers" page={ProviderProvidersPage} name="providers" />
       </Set>
+    */}
       <Set wrap={BannerLayout}>
         <Route path="/hcp-dashboard" page={HcpDashboardPage} name="hcpDashboard" />
         <Route path="/provider-dashboard" page={ProviderDashboardPage} name="providerDashboard" />
       </Set>
+
       <Route notfound page={NotFoundPage} />
     </Router>
   )

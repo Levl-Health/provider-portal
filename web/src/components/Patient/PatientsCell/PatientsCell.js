@@ -3,8 +3,8 @@ import { Link, routes } from '@redwoodjs/router'
 import Patients from 'src/components/Patient/Patients'
 
 export const QUERY = gql`
-  query FindPatients($providerId: Int!) {
-    patients(providerId: $providerId) {
+  query FindPatients($providerId: Int!, $filters: JSON) {
+    patients(providerId: $providerId, filters: $filters) {
       id
       providerId
       active
@@ -13,8 +13,20 @@ export const QUERY = gql`
       firstName
       middleName
       lastName
-
       phoneNumber
+      DailyMetric {
+        id
+        patientId
+        adhd
+        anxiety
+        depression
+        createdAt
+        mood
+        dosages
+        dosagesTaken
+        checkedIn
+        moodLevel
+      }
     }
   }
 `
