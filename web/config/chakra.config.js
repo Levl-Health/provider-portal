@@ -1,57 +1,57 @@
 // This object will be used to override Chakra-UI theme defaults.
 // See https://chakra-ui.com/docs/styled-system/theming/theme for theming options
 
-import { extendTheme } from "@chakra-ui/react"
-import "../public/fonts.css";
+import { extendTheme } from '@chakra-ui/react'
+import '/public/fonts.css'
 
 const BaseTheme = extendTheme({
   colors: {
     background: {
-      100: "#FFF5ED",
-      200: "#FFF8F3",
-      300: "#FFFFFF"
+      100: '#FFF5ED',
+      200: '#FFF8F3',
+      300: '#FFFFFF',
     },
     grey: {
-      100: "#363636",
-      200: "#888C93",
-      300: "#D6D6D7",
-      400: "#FAFAFA"
+      100: '#363636',
+      200: '#888C93',
+      300: '#D6D6D7',
+      400: '#FAFAFA',
     },
     brand: {
-      "green": {
-        100: "#317C07",
-        200: "#D6E5CD"
+      green: {
+        100: '#317C07',
+        200: '#D6E5CD',
       },
-      "coral": {
-        100: "#F17454",
-        200: "#FCE3DD"
+      coral: {
+        100: '#F17454',
+        200: '#FCE3DD',
       },
-      "electric-violet": {
-        100: "#7642fe",
-        200: "#E4D9FF"
+      'electric-violet': {
+        100: '#7642fe',
+        200: '#E4D9FF',
       },
-      "blue": {
-        100: "#4DB3F4",
-        200: "#DBF0FD"
+      blue: {
+        100: '#4DB3F4',
+        200: '#DBF0FD',
       },
-      "yellow": {
-        100: "#FAD93C",
-        200: "#FEF7D8"
-      }
+      yellow: {
+        100: '#FAD93C',
+        200: '#FEF7D8',
+      },
     },
     emoji: {
-      green: "#63B635",
-      lime: "#C2D64D",
-      yellow: "#fad93c",
-      orange: "#FA803C",
-      coral: "#F17454",
-    }
+      green: '#63B635',
+      lime: '#C2D64D',
+      yellow: '#fad93c',
+      orange: '#FA803C',
+      coral: '#F17454',
+    },
   },
 
   fonts: {
-    heading: "Greed, sans-serif",
-    headline: "Inter-SemiBold, sans-serif",
-    body: "Inter, sans-serif",
+    heading: 'Greed, sans-serif',
+    headline: 'Inter-SemiBold, sans-serif',
+    body: 'Inter, sans-serif',
   },
 
   fontSizes: {
@@ -61,7 +61,7 @@ const BaseTheme = extendTheme({
     '16x24': { size: '16px', lineHeight: '24px' },
     '11x16': { size: '11px', lineHeight: '16px' },
     '14x24': { size: '14px', lineHeight: '24px' },
-  }
+  },
 })
 
 export default BaseTheme
