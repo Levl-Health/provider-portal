@@ -19,11 +19,9 @@ export default {
   title: 'Components/HorizontalMeter',
   component: HorizontalMeter,
   args: {
-    text: 'High-risk',
-    imageSrc: '/images/mood_0.svg',
-    bgColor: 'emoji.green',
+    riskStatus: 'High-risk for 3 weeks',
     spacerWidth: '10em',
-    textColor: 'background.100',
     meterHeight: '2.5em',
+    hasMoodImg: true,
   },
 }

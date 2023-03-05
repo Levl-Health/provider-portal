@@ -45,36 +45,12 @@ const PatientCard = ({ patient }) => {
             display="flex"
             alignItems="center"
           >
-            {patient.riskStatus === 'High-risk for 3 weeks' && (
-              <HorizontalMeter
-                text="High-risk"
-                textColor="background.100"
-                imageSrc="/images/mood_4.svg"
-                bgColor="emoji.coral"
-                spacerWidth="10em"
-                meterHeight="2.5em"
-              />
-            )}
-            {patient.riskStatus === 'Very low-risk' && (
-              <HorizontalMeter
-                text="Very low-risk"
-                textColor="background.100"
-                imageSrc="/images/mood_0.svg"
-                bgColor="emoji.green"
-                spacerWidth="10em"
-                meterHeight="2.5em"
-              />
-            )}
-            {patient.riskStatus === 'Low-risk' && (
-              <HorizontalMeter
-                text="Low-risk"
-                textColor="background.100"
-                imageSrc="/images/mood_1.svg"
-                bgColor="emoji.lime"
-                spacerWidth="10em"
-                meterHeight="2.5em"
-              />
-            )}
+            <HorizontalMeter
+              riskStatus={patient.riskStatus}
+              spacerWidth="10em"
+              meterHeight="2.5em"
+              hasMoodImg={true}
+            />
           </Box>
 
           {/* Symptoms */}

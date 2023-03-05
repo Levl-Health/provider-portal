@@ -1,13 +1,38 @@
 import { Box, Circle, Flex, Img, Text, Spacer } from '@chakra-ui/react'
 
 const HorizontalMeter = ({
-  text,
-  textColor,
-  imageSrc,
-  bgColor,
+  riskStatus,
   spacerWidth,
   meterHeight,
+  hasMoodImg,
 }) => {
+  let text, imageSrc, bgColor, textColor
+  switch (riskStatus) {
+    case 'High-risk for 3 weeks':
+      text = 'High-risk'
+      imageSrc = hasMoodImg ? '/images/mood_4.svg' : ''
+      bgColor = 'emoji.coral'
+      textColor = 'background.100'
+      break
+    case 'Very low-risk':
+      text = 'Very low-risk'
+      imageSrc = hasMoodImg ? '/images/mood_0.svg' : ''
+      bgColor = 'emoji.green'
+      textColor = 'background.100'
+      break
+    case 'Low-risk':
+      text = 'Low-risk'
+      imageSrc = hasMoodImg ? '/images/mood_1.svg' : ''
+      bgColor = 'emoji.lime'
+      textColor = 'background.100'
+      break
+    default:
+      text = 'Unknown'
+      imageSrc = ''
+      bgColor = 'background.300'
+      textColor = 'text.secondary'
+  }
+
   return (
     <Box position="relative" color={textColor}>
       <Box h="100%">
