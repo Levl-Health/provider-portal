@@ -2,6 +2,8 @@ import React from 'react'
 
 import { Box, Flex, Img, Text, Button } from '@chakra-ui/react'
 
+import HorizontalMeter from 'src/components/HorizontalMeter/HorizontalMeter'
+
 const PatientCard = ({
   avatar,
   firstName,
@@ -42,96 +44,42 @@ const PatientCard = ({
           </Box>
 
           {/* Risk Status */}
-          <Box flex="1.25" h="3em" fontWeight="bold" color="background.300">
+          <Box
+            flex="1.25"
+            h="3em"
+            fontWeight="bold"
+            display="flex"
+            alignItems="center"
+          >
             {riskStatus === 'High-risk for 3 weeks' && (
-              <Box h="100%">
-                <Flex alignItems="center" h="100%">
-                  <Box
-                    w="80%"
-                    h="90%"
-                    display="flex"
-                    alignItems="center"
-                    bg="emoji.coral"
-                    borderRadius="lg"
-                  >
-                    <Text ml=".5em">High-risk</Text>
-                  </Box>
-                  <Box
-                    w="3em"
-                    h="100%"
-                    bg="background.300"
-                    position="relative"
-                    right="2.25em"
-                    borderRadius="full"
-                  ></Box>
-                  <Img
-                    position="relative"
-                    src="/images/mood_4.svg"
-                    h="90%"
-                    right="4.5em"
-                  />
-                </Flex>
-              </Box>
+              <HorizontalMeter
+                text="High-risk"
+                textColor="background.100"
+                imageSrc="/images/mood_4.svg"
+                bgColor="emoji.coral"
+                spacerWidth="10em"
+                meterHeight="2.5em"
+              />
             )}
             {riskStatus === 'Very low-risk' && (
-              <Box h="100%">
-                <Flex alignItems="center" h="100%">
-                  <Box
-                    w="80%"
-                    h="90%"
-                    display="flex"
-                    alignItems="center"
-                    bg="emoji.green"
-                    borderRadius="lg"
-                  >
-                    <Text ml=".5em">Very low-risk</Text>
-                  </Box>
-                  <Box
-                    w="3em"
-                    h="100%"
-                    bg="background.300"
-                    position="relative"
-                    right="2.25em"
-                    borderRadius="full"
-                  ></Box>
-                  <Img
-                    position="relative"
-                    src="/images/mood_0.svg"
-                    h="90%"
-                    right="4.5em"
-                  />
-                </Flex>
-              </Box>
+              <HorizontalMeter
+                text="Very low-risk"
+                textColor="background.100"
+                imageSrc="/images/mood_0.svg"
+                bgColor="emoji.green"
+                spacerWidth="10em"
+                meterHeight="2.5em"
+              />
             )}
             {riskStatus === 'Low-risk' && (
-              <Box h="100%">
-                <Flex alignItems="center" h="100%">
-                  <Box
-                    w="80%"
-                    h="90%"
-                    display="flex"
-                    alignItems="center"
-                    bg="emoji.lime"
-                    borderRadius="lg"
-                  >
-                    <Text ml=".5em">Low-risk</Text>
-                  </Box>
-                  <Box
-                    w="3em"
-                    h="100%"
-                    bg="background.300"
-                    position="relative"
-                    right="2.25em"
-                    borderRadius="full"
-                  ></Box>
-                  <Img
-                    position="relative"
-                    src="/images/mood_1.svg"
-                    h="90%"
-                    right="4.5em"
-                  />
-                </Flex>
-              </Box>
+              <HorizontalMeter
+                text="Low-risk"
+                textColor="background.100"
+                imageSrc="/images/mood_1.svg"
+                bgColor="emoji.lime"
+                spacerWidth="10em"
+                meterHeight="2.5em"
+              />
             )}
           </Box>
 
