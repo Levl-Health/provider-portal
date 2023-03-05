@@ -19,13 +19,15 @@ export default {
   title: 'Components/PatientCard',
   component: PatientCard,
   args: {
-    avatar: 'images/avatar_2.png',
-    firstName: 'Milan',
-    middleName: '',
-    lastName: 'McGregor',
-    riskStatus: 'Very low-risk',
-    mood: ['Anxious', 'Average'],
-    adherence: 80,
-    checkedIn: '2022-12-20',
+    patient: {
+      avatar: 'images/avatar_2.png',
+      firstName: 'Milan',
+      middleName: '',
+      lastName: 'McGregor',
+      riskStatus: 'Very low-risk',
+      mood: ['Anxious', 'Average'],
+      adherence: 80,
+      checkedIn: '2022-12-20',
+    },
   },
 }

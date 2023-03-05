@@ -4,16 +4,7 @@ import { Box, Flex, Img, Text, Button } from '@chakra-ui/react'
 
 import HorizontalMeter from 'src/components/HorizontalMeter/HorizontalMeter'
 
-const PatientCard = ({
-  avatar,
-  firstName,
-  middleName,
-  lastName,
-  riskStatus,
-  mood,
-  adherence,
-  checkedIn,
-}) => {
+const PatientCard = ({ patient }) => {
   return (
     <>
       <Box
@@ -31,14 +22,17 @@ const PatientCard = ({
             <Flex alignItems="center">
               {/* Image */}
               <Box borderRadius="full" overflow="hidden">
-                <Img src={avatar} alt={`${firstName} ${lastName}`} />
+                <Img
+                  src={patient.avatar}
+                  alt={`${patient.firstName} ${patient.lastName}`}
+                />
               </Box>
 
               {/* Patient Name */}
               <Text ml="1em" fontWeight="bold">
-                {`${firstName} ${
-                  middleName ? middleName + ' ' : ''
-                }${lastName}`}
+                {`${patient.firstName} ${
+                  patient.middleName ? patient.middleName + ' ' : ''
+                }${patient.lastName}`}
               </Text>
             </Flex>
           </Box>
@@ -51,7 +45,7 @@ const PatientCard = ({
             display="flex"
             alignItems="center"
           >
-            {riskStatus === 'High-risk for 3 weeks' && (
+            {patient.riskStatus === 'High-risk for 3 weeks' && (
               <HorizontalMeter
                 text="High-risk"
                 textColor="background.100"
@@ -61,7 +55,7 @@ const PatientCard = ({
                 meterHeight="2.5em"
               />
             )}
-            {riskStatus === 'Very low-risk' && (
+            {patient.riskStatus === 'Very low-risk' && (
               <HorizontalMeter
                 text="Very low-risk"
                 textColor="background.100"
@@ -71,7 +65,7 @@ const PatientCard = ({
                 meterHeight="2.5em"
               />
             )}
-            {riskStatus === 'Low-risk' && (
+            {patient.riskStatus === 'Low-risk' && (
               <HorizontalMeter
                 text="Low-risk"
                 textColor="background.100"
@@ -90,15 +84,15 @@ const PatientCard = ({
 
           {/* Mood */}
           <Box flex="1">
-            <Box>{mood.join(', ')}</Box>
+            <Box>{patient.mood.join(', ')}</Box>
           </Box>
 
           {/* Adherence */}
           <Box flex="1">
             <Box w="75%">
-              <Text fontWeight="bold">{adherence}%</Text>
+              <Text fontWeight="bold">{patient.adherence}%</Text>
               <Box
-                w={`${adherence}%`}
+                w={`${patient.adherence}%`}
                 h="1em"
                 bg="brand.blue.100"
                 borderRadius="full"
@@ -107,7 +101,7 @@ const PatientCard = ({
           </Box>
 
           {/* Last Check-In */}
-          <Box flex="1">{checkedIn}</Box>
+          <Box flex="1">{patient.checkedIn}</Box>
 
           {/* Actions */}
           <Box flex="1">
