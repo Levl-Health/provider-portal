@@ -9,6 +9,7 @@ datasource db {
   shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
 }
 
+
 model DailyMetric {
   id           Int          @id(map: "PK__dailymet__3213E83FD6D209E3") @default(autoincrement())
   patientId    Int
@@ -63,4 +64,5 @@ model SideEffect {
   title            String      @db.VarChar(45)
   DailyMetric      DailyMetric @relation(fields: [patientMetricsId], references: [id], onUpdate: NoAction, map: "FK_sideEffects_to_dailyMetrics")
   Patient          Patient     @relation(fields: [patientId], references: [id], onUpdate: NoAction, map: "FK_sideEffects_to_Patient")
+
 }

@@ -7,8 +7,11 @@
     ]
   },
   "devDependencies": {
+
     "@redwoodjs/auth-firebase-setup": "4.0.1",
     "@redwoodjs/core": "4.0.1"
+    "prisma": "^4.10.1"
+
   },
   "eslintConfig": {
     "extends": "@redwoodjs/eslint-config",
