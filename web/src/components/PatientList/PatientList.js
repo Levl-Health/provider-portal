@@ -2,7 +2,7 @@ import { InfoOutlineIcon } from '@chakra-ui/icons'
 import { Box, Flex, Text } from '@chakra-ui/react'
 import { Icon } from '@chakra-ui/react'
 
-import PatientCard from '../PatientCard/PatientCard'
+import PatientCard from 'src/components/PatientCard/PatientCard'
 
 const PatientList = () => {
   // Temporary Sample Data
