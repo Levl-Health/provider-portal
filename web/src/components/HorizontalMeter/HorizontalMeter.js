@@ -23,16 +23,29 @@ const HorizontalMeter = ({
             </Box>
             <Spacer width={spacerWidth} />
           </Flex>
-          <Circle
-            bg="background.300"
-            size="3em"
-            position="relative"
-            zIndex={1}
-            left="-2em"
-            boxShadow="0px 2px 4px rgba(0, 0, 0, 0.25)"
-          >
-            <Img src={imageSrc} h="80%" />
-          </Circle>
+          {imageSrc ? (
+            <Circle
+              bg="background.300"
+              size="3em"
+              position="relative"
+              zIndex={1}
+              left="-2em"
+              boxShadow="0px 2px 4px rgba(0, 0, 0, 0.25)"
+            >
+              <Img src={imageSrc} h="80%" />
+            </Circle>
+          ) : (
+            <Circle
+              bg="background.300"
+              size="3em"
+              position="relative"
+              zIndex={1}
+              left="-2em"
+              boxShadow="0px 2px 4px rgba(0, 0, 0, 0.25)"
+            >
+              <Circle bg={bgColor} size="2.25em" />
+            </Circle>
+          )}
         </Flex>
       </Box>
     </Box>
