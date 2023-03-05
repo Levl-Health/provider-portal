@@ -59,4 +59,9 @@ WHERE providerId = [the doctor's id]
   AND (BETWEEN today - 30 AND today)
 GROUP BY id
 
+#### Mood Reported
+TBD
+
+#### Adherence
+
 ### HCP Dashboard
