@@ -4,7 +4,8 @@
 import { extendTheme } from "@chakra-ui/react"
 import "../public/fonts.css";
 
-const BaseTheme = extendTheme({
+const BaseTheme = extendTheme(
+  {
   colors: {
     background: {
       100: "#FFF5ED",
@@ -62,6 +63,35 @@ const BaseTheme = extendTheme({
     '11x16': { size: '11px', lineHeight: '16px' },
     '14x24': { size: '14px', lineHeight: '24px' },
   }
-})
+},
+{
+  components: {
+    Button: {
+      sizes: {
+        providerStatCard: {
+          h: '138px',
+          w: '138px',
+        },
+        providerCard: {
+          h: '138px',
+          w: '317px',
+        }
+      }
+    },
+    Select: {
+      sizes: {
+        filter1: {
+          h: '56px',
+          w: '237px',
+        },
+        filter2: {
+          h: '56px',
+          w: '156px',
+        }
+      }
+    }
+  }
+}
+)
 
 export default BaseTheme
