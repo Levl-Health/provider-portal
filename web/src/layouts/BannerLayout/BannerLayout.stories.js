@@ -1,4 +1,4 @@
-import BannerLayout from './BannerLayout'
+import BannerLayout from 'src/layouts/BannerLayout/BannerLayout'
 
 export const generated = (args) => {
   return <BannerLayout {...args} />

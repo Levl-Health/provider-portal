@@ -1,6 +1,6 @@
 import { render } from '@redwoodjs/testing/web'
 
-import ProviderDashboardPage from './ProviderDashboardPage'
+import ProviderDashboardPage from 'src/pages/ProviderDashboardPage/ProviderDashboardPage'
 
 //   Improve this test with help from the Redwood Testing Doc:
 //   https://redwoodjs.com/docs/testing#testing-pages-layouts
