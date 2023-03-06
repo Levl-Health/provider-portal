@@ -1,6 +1,7 @@
 import { MetaTags } from '@redwoodjs/web'
 
-import PatientList from 'src/components/PatientList'
+import Filters from 'src/components/Filters/Filters'
+import ProviderStatCard from 'src/components/ProviderStatCard/ProviderStatCard'
 
 const ProviderDashboardPage = () => {
   return (
@@ -9,8 +10,8 @@ const ProviderDashboardPage = () => {
         title="ProviderDashboard"
         description="ProviderDashboard page"
       />
-
-      <PatientList />
+      <ProviderStatCard />
+      <Filters />
     </>
   )
 }
